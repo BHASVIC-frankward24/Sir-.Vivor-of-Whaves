@@ -1,22 +1,29 @@
+using System.Numerics;
 using System.Runtime.CompilerServices;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 
+
 public class Playerscript : MonoBehaviour
 {
+
+    [SerializeField]
+    private float VelocityMultiplier = 5f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
 
     }
-        
-    
+
+
     // Update is called once per frame
-    public void Update(){
+    public void Update()
+    {
         float horizontal = 0f;
-        if(Keyboard.current.leftArrowKey.isPressed)
+        if (Keyboard.current.leftArrowKey.isPressed)
         {
             horizontal = -1.0f;
         }
@@ -24,7 +31,20 @@ public class Playerscript : MonoBehaviour
         {
             horizontal = 1.0f;
         }
-            Debug.Log(horizontal);
+
+    float vertical = 0f;
+        if (Keyboard.current.downArrowKey.isPressed)
+        {
+            vertical = -1.0f;
+        }
+        else if (Keyboard.current.upArrowKey.isPressed)
+        {
+            vertical = 1.0f;
+        }
+
+
+        transform.position += new UnityEngine.Vector3(horizontal, vertical, 0f) * VelocityMultiplier * Time.deltaTime;
+        
     }
 
 }
