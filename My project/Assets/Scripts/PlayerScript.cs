@@ -1,5 +1,6 @@
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using Unity.Collections;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,13 +11,14 @@ public class Playerscript : MonoBehaviour
 {
 
     [SerializeField]
-    private float VelocityMultiplier = 5f;
+    private float VelocityMultiplier = 7f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
 
     }
+
 
 
     // Update is called once per frame
@@ -32,7 +34,7 @@ public class Playerscript : MonoBehaviour
             horizontal = 1.0f;
         }
 
-    float vertical = 0f;
+        float vertical = 0f;
         if (Keyboard.current.downArrowKey.isPressed)
         {
             vertical = -1.0f;
@@ -44,7 +46,7 @@ public class Playerscript : MonoBehaviour
 
 
         transform.position += new UnityEngine.Vector3(horizontal, vertical, 0f) * VelocityMultiplier * Time.deltaTime;
-        
+
     }
 
 }
