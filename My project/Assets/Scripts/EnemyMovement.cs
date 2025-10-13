@@ -22,10 +22,19 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (playerObj == null)
+            playerObj = GameObject.FindGameObjectWithTag("Player");
+
         
         velocityX = FindMovementRatio('x');
         velocityY = FindMovementRatio('y');
-        
+
+        if (transform.position.x < playerObj.transform.position.x){
+            velocityX = velocityX * -1;
+        }
+        if (transform.position.y < playerObj.transform.position.y){
+            velocityY = velocityY * -1;
+        }
         transform.position += new UnityEngine.Vector3(velocityX, velocityY, 0f) * VelocityMultiplier * Time.deltaTime;
         
     }
@@ -37,16 +46,17 @@ public class EnemyMovement : MonoBehaviour
         xCoord = transform.position.x - playerObj.transform.position.x;
         yCoord = transform.position.y - playerObj.transform.position.y;
 
-        denominator = Mathf.Sqrt(xCoord*xCoord + yCoord*yCoord); // Calculates what the length of the direct line between the player and enemy is.
+        // Calculates what the length of the direct line between the player and enemy is.
+        denominator = Mathf.Sqrt(xCoord*xCoord + yCoord*yCoord); 
         if(axis == 'x' && transform.position.x < playerObj.transform.position.x)
             return (xCoord / denominator);
         else if(axis == 'x' && transform.position.x > playerObj.transform.position.x)
-            return (-1 * xCoord / denominator);
+            return -1f * (xCoord / denominator);
 
         if(axis == 'y' && transform.position.y < playerObj.transform.position.y)
             return (yCoord / denominator);
         else if(axis == 'y' && transform.position.y > playerObj.transform.position.y)
-            return (-1 * yCoord / denominator);
+            return -1f * ( yCoord / denominator);
         
         return 0f;
     }
