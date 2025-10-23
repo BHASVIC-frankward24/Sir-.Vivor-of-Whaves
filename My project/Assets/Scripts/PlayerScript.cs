@@ -4,6 +4,7 @@ using Unity.Collections;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 
 
@@ -16,7 +17,7 @@ public class Playerscript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        LoadPlayerData();
     }
 
 
@@ -47,6 +48,25 @@ public class Playerscript : MonoBehaviour
 
         transform.position += new UnityEngine.Vector3(horizontal, vertical, 0f) * VelocityMultiplier * Time.deltaTime;
 
+    }
+
+    public void SavePlayerData()
+    {
+        PlayerPrefs.SetFloat("XCoord", transform.position.x);
+        PlayerPrefs.SetFloat("YCoord", transform.position.y);
+    }
+
+    public void LoadPlayerData()
+    {
+        float X = PlayerPrefs.GetFloat("XCoord", 0);
+        float Y = PlayerPrefs.GetFloat("YCoord", 0);
+        transform.position = new UnityEngine.Vector3(X, Y, 0f);
+    }
+
+    public void ResetPlayerData()
+    {
+        transform.position = new UnityEngine.Vector3(-3.5f, -0.8f, -1f);
+        SavePlayerData();
     }
 
 }
