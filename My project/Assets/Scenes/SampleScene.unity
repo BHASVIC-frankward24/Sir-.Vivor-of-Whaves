@@ -1644,6 +1644,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1807570443 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 553006944398856028, guid: 1b28754d11292d546a9603173c12933b, type: 3}
+  m_PrefabInstance: {fileID: 248730215782184322}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1807570449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807570443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2657dae7e183a4ab05ca01717f1204, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
 --- !u!1 &2038464099
 GameObject:
   m_ObjectHideFlags: 0
@@ -2060,6 +2077,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EVIL Goblin
       objectReference: {fileID: 0}
+    - target: {fileID: 553006944398856028, guid: 1b28754d11292d546a9603173c12933b, type: 3}
+      propertyPath: m_TagString
+      value: EVIL
+      objectReference: {fileID: 0}
     - target: {fileID: 5876310485906063510, guid: 1b28754d11292d546a9603173c12933b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.0008106
@@ -2103,7 +2124,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 553006944398856028, guid: 1b28754d11292d546a9603173c12933b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1807570449}
   m_SourcePrefab: {fileID: 100100000, guid: 1b28754d11292d546a9603173c12933b, type: 3}
 --- !u!1001 &1117346984298377847
 PrefabInstance:
