@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &351896287 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1527499928127270892, guid: 37e3c8b39edef704eb814b601ff16172, type: 3}
+  m_PrefabInstance: {fileID: 8987645638317291613}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &439576480
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +206,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 439576483}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1097766135}
+        m_TargetAssemblyTypeName: ResetButton, Assembly-CSharp
+        m_MethodName: Onpress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &439576483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,12 +398,24 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5947613045380195775, guid: 37e3c8b39edef704eb814b601ff16172, type: 3}
   m_PrefabInstance: {fileID: 8987645638317291613}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 351896287}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70d1a0c86df8d784f88371dfdd4e26ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayButton
+--- !u!114 &1097766135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351896287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7422dcfb13aaca4a94615c3be9fc4f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResetButton
 --- !u!1 &1109963171
 GameObject:
   m_ObjectHideFlags: 0
@@ -1257,7 +1286,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1527499928127270892, guid: 37e3c8b39edef704eb814b601ff16172, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1097766135}
   m_SourcePrefab: {fileID: 100100000, guid: 37e3c8b39edef704eb814b601ff16172, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

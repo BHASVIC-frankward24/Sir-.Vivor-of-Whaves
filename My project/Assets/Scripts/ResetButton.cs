@@ -3,14 +3,9 @@ using UnityEngine;
 public class ResetButton : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Onpress()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        PlayerPrefs.SetString("Reset", "True");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
     }
 }

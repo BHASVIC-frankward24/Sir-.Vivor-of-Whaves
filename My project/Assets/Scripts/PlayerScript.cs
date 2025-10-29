@@ -17,7 +17,13 @@ public class Playerscript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        LoadPlayerData();
+        if (PlayerPrefs.GetString("Reset") == "True")
+            ResetPlayerData();
+        else
+        {
+            LoadPlayerData();
+        }
+        PlayerPrefs.SetString("Reset", "False");
     }
 
 
