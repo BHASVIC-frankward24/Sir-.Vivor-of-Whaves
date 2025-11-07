@@ -11,8 +11,11 @@ using UnityEngine.UIElements;
 public class Playerscript : MonoBehaviour
 {
 
-    [SerializeField]
-    private float VelocityMultiplier = 7f;
+    [SerializeField] private float VelocityMultiplier = 7f;
+    [SerializeField] private int health = 3;
+
+    private GameObject[] hearts;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,6 +27,10 @@ public class Playerscript : MonoBehaviour
             LoadPlayerData();
         }
         PlayerPrefs.SetString("Reset", "False");
+        hearts[0] = GameObject.FindGameObjectWithTag("Heart 3");
+        hearts[1] = GameObject.FindGameObjectWithTag("Heart 2");
+        hearts[2] = GameObject.FindGameObjectWithTag("Heart 1");
+        
     }
 
 
@@ -31,6 +38,9 @@ public class Playerscript : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+
+
+
         float horizontal = 0f;
         if (Keyboard.current.leftArrowKey.isPressed)
         {
@@ -56,6 +66,39 @@ public class Playerscript : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("EVIL"))
+        {
+            DamagePlayer(1);
+        }
+                
+
+        for(int i = 3; i > 0; i--)
+        {
+            if(health < i)
+            {
+                hearts[3-i].GetComponent<HeartManager>().LoseHeart();
+            }
+        }
+    }
+
+    private void DamagePlayer(int damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            GameOver();
+        }
+    }
+
+    private void GameOver()
+    {
+        PlayerPrefs.SetString("Reset", "true");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Loser Menu");
+
+    }
+
     public void SavePlayerData()
     {
         PlayerPrefs.SetFloat("XCoord", transform.position.x);
@@ -74,6 +117,7 @@ public class Playerscript : MonoBehaviour
         transform.position = new UnityEngine.Vector3(-3.5f, -0.8f, -1f);
         SavePlayerData();
     }
+
 
 }
 

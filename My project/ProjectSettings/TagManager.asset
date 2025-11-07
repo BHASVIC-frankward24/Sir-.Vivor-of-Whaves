@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - EVIL
+  - Heart 1
+  - Heart 2
+  - Heart 3
   layers:
   - Default
   - TransparentFX
@@ -12,7 +15,7 @@ TagManager:
   - Button?
   - Water
   - UI
-  - 
+  - Backgrounds
   - 
   - 
   - 
