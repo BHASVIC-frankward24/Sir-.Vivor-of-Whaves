@@ -355,6 +355,7 @@ GameObject:
   m_Component:
   - component: {fileID: 186762508}
   - component: {fileID: 186762509}
+  - component: {fileID: 186762510}
   m_Layer: 0
   m_Name: Red Heart (1)
   m_TagString: Untagged
@@ -371,7 +372,7 @@ Transform:
   m_GameObject: {fileID: 186762507}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.5, y: 10.5, z: -5}
+  m_LocalPosition: {x: 22.5, y: 15, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -435,6 +436,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &186762510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186762507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e46eadb61928a4f86a8900e0fa877e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Heart2
 --- !u!1 &317477447
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,7 +474,7 @@ Transform:
   m_GameObject: {fileID: 317477447}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14, y: 10.5, z: 0}
+  m_LocalPosition: {x: 20, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1028,7 +1041,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 519420031}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -1052,8 +1065,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2103101714}
   - {fileID: 1441262449}
+  - {fileID: 2103101714}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1581,7 +1594,7 @@ Transform:
   m_GameObject: {fileID: 1243392429}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19, y: 10.5, z: 0}
+  m_LocalPosition: {x: 25, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1729,7 +1742,7 @@ Transform:
   m_GameObject: {fileID: 1399255185}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: -44, y: 0, z: -1531.5001}
+  m_LocalPosition: {x: -44, y: 0, z: 0}
   m_LocalScale: {x: 4.254167, y: 4.254167, z: 17.016668}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1761,7 +1774,7 @@ Transform:
   m_GameObject: {fileID: 1441262448}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.075377, y: -37.211197, z: -1177.5533}
+  m_LocalPosition: {x: 17.075377, y: -37.211197, z: 0}
   m_LocalScale: {x: 17.016668, y: 17.016668, z: 17.016668}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2008,7 +2021,7 @@ Transform:
   m_GameObject: {fileID: 1816375641}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.5, y: 10.5, z: 0}
+  m_LocalPosition: {x: 22.5, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2262,6 +2275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2056873040}
   - component: {fileID: 2056873041}
+  - component: {fileID: 2056873042}
   m_Layer: 0
   m_Name: Red Heart
   m_TagString: Untagged
@@ -2278,7 +2292,7 @@ Transform:
   m_GameObject: {fileID: 2056873039}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19, y: 10.5, z: -5}
+  m_LocalPosition: {x: 25, y: 15, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2342,6 +2356,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2056873042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056873039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069b6f3c2e5241c4693ffb3afa370db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Heart3
 --- !u!1 &2075123283
 GameObject:
   m_ObjectHideFlags: 0
@@ -2352,6 +2378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2075123284}
   - component: {fileID: 2075123285}
+  - component: {fileID: 2075123286}
   m_Layer: 0
   m_Name: Red Heart (2)
   m_TagString: Untagged
@@ -2368,7 +2395,7 @@ Transform:
   m_GameObject: {fileID: 2075123283}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14, y: 10.5, z: -5}
+  m_LocalPosition: {x: 20, y: 15, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2432,6 +2459,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2075123286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075123283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2417a90e88eacc48b78209574434667, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Heart1
 --- !u!1 &2079108193
 GameObject:
   m_ObjectHideFlags: 0
@@ -2682,7 +2721,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5876310485906063510, guid: 1b28754d11292d546a9603173c12933b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5876310485906063510, guid: 1b28754d11292d546a9603173c12933b, type: 3}
       propertyPath: m_LocalRotation.w

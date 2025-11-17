@@ -22,6 +22,12 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (transform.position.z >= 0)
+        {
+            transform.position += new UnityEngine.Vector3(0, 0, -1f);
+        }
+
         if (playerObj == null)
             playerObj = GameObject.FindGameObjectWithTag("Player");
 

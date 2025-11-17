@@ -14,7 +14,7 @@ public class Playerscript : MonoBehaviour
     [SerializeField] private float VelocityMultiplier = 7f;
     [SerializeField] private int health = 3;
 
-    private GameObject[] hearts;
+    
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,10 +26,6 @@ public class Playerscript : MonoBehaviour
         {
             LoadPlayerData();
         }
-        PlayerPrefs.SetString("Reset", "False");
-        hearts[0] = GameObject.FindGameObjectWithTag("Heart 3");
-        hearts[1] = GameObject.FindGameObjectWithTag("Heart 2");
-        hearts[2] = GameObject.FindGameObjectWithTag("Heart 1");
         
     }
 
@@ -38,6 +34,11 @@ public class Playerscript : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+
+        if(transform.position.z >= 0)
+        {
+            transform.position += new UnityEngine.Vector3(0, 0, -1f);
+        }
 
 
 
@@ -71,16 +72,11 @@ public class Playerscript : MonoBehaviour
         if (collision.gameObject.CompareTag("EVIL"))
         {
             DamagePlayer(1);
+            print("Player took damage");
         }
-                
 
-        for(int i = 3; i > 0; i--)
-        {
-            if(health < i)
-            {
-                hearts[3-i].GetComponent<HeartManager>().LoseHeart();
-            }
-        }
+
+        PlayerPrefs.SetInt("SystemHealth", health);
     }
 
     private void DamagePlayer(int damage)
@@ -103,18 +99,22 @@ public class Playerscript : MonoBehaviour
     {
         PlayerPrefs.SetFloat("XCoord", transform.position.x);
         PlayerPrefs.SetFloat("YCoord", transform.position.y);
+        PlayerPrefs.SetInt("Health", health);
     }
 
     public void LoadPlayerData()
     {
         float X = PlayerPrefs.GetFloat("XCoord", 0);
         float Y = PlayerPrefs.GetFloat("YCoord", 0);
-        transform.position = new UnityEngine.Vector3(X, Y, 0f);
+        transform.position = new UnityEngine.Vector3(X, Y, -1f);
+        health = PlayerPrefs.GetInt("Health", 0);
     }
 
     public void ResetPlayerData()
     {
         transform.position = new UnityEngine.Vector3(-3.5f, -0.8f, -1f);
+        health = 3;
+        PlayerPrefs.SetInt("SystemHealth", 3);
         SavePlayerData();
     }
 
