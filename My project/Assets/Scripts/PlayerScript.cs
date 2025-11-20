@@ -113,6 +113,7 @@ public class Playerscript : MonoBehaviour
     public void ResetPlayerData()
     {
         transform.position = new UnityEngine.Vector3(-3.5f, -0.8f, -1f);
+        PlayerPrefs.SetInt("Health", 3);
         health = 3;
         PlayerPrefs.SetInt("SystemHealth", 3);
         SavePlayerData();

@@ -5,11 +5,11 @@ public class Heart2 : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void LoseHeart()
     {
-        transform.position = new UnityEngine.Vector3(0, 0, 0);
+        transform.position = new UnityEngine.Vector3(15f, 10f, 5f);
     }
     public void GainHeart()
     {
-        transform.position += new UnityEngine.Vector3(0, 0, -1);
+        transform.position = new UnityEngine.Vector3(15f, 10f, 1f);
     }
 
 
