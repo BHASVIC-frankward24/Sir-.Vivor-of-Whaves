@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Heart1 : MonoBehaviour
@@ -5,17 +6,19 @@ public class Heart1 : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void LoseHeart()
     {
-        transform.position = new UnityEngine.Vector3(12.5f, 10f, 5f);
+        //Hide
+        this.gameObject.SetActive(false);
     }
     public void GainHeart()
     {
-        transform.position = new UnityEngine.Vector3(12.5f, 10f, 1f);
+        //Show
+        this.gameObject.SetActive(true);
     }
 
 
     void Awake()
     {
-        transform.position = new UnityEngine.Vector3(12.5f, 10f, 1f);
+  
     }
 
     void Update()

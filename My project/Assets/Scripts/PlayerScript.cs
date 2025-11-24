@@ -104,10 +104,10 @@ public class Playerscript : MonoBehaviour
 
     public void LoadPlayerData()
     {
-        float X = PlayerPrefs.GetFloat("XCoord", 0);
-        float Y = PlayerPrefs.GetFloat("YCoord", 0);
+        float X = PlayerPrefs.GetFloat("XCoord");
+        float Y = PlayerPrefs.GetFloat("YCoord");
         transform.position = new UnityEngine.Vector3(X, Y, -1f);
-        health = PlayerPrefs.GetInt("Health", 0);
+        health = PlayerPrefs.GetInt("Health");
     }
 
     public void ResetPlayerData()

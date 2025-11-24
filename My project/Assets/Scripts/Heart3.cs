@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Heart3 : MonoBehaviour
@@ -5,19 +6,23 @@ public class Heart3 : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void LoseHeart()
     {
-        transform.position = new UnityEngine.Vector3(17.5f, 10f, 5f);
+        //Hide
+        this.gameObject.SetActive(false);
     }
     public void GainHeart()
     {
-        transform.position = new UnityEngine.Vector3(17.5f, 10f, 1f);
+        //Show
+        this.gameObject.SetActive(true);
     }
 
 
+    void Awake()
+    {
+  
+    }
+
     void Update()
     {
-        if (this == null)
-            return;
-
         if (PlayerPrefs.GetInt("SystemHealth", 0) <= 0)
         {
             LoseHeart();
@@ -26,10 +31,5 @@ public class Heart3 : MonoBehaviour
         {
             GainHeart();
         }
-    }
-
-    void OnDestroy()
-    {
-        Debug.Log("Heart3 has been destroyed");
     }
 }
