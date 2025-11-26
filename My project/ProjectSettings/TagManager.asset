@@ -8,6 +8,7 @@ TagManager:
   - Heart 1
   - Heart 2
   - Heart 3
+  - Melee
   layers:
   - Default
   - TransparentFX
