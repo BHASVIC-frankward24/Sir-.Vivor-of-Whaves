@@ -5,16 +5,21 @@ public class EnemyMovement : MonoBehaviour
 {
     private float velocityY = 0f;
     private float velocityX = 0f;
-    [SerializeField]
-    private float VelocityMultiplier = 3;
+    public float VelocityMultiplier = 0;
     private GameObject playerObj = null;
     private float xCoord;
     private float yCoord;
     private float denominator;
+    public bool Original = true;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
+    {
+        
+    }
+
+    void Awake()
     {
         
     }
@@ -42,7 +47,11 @@ public class EnemyMovement : MonoBehaviour
             velocityY = velocityY * -1;
         }
         transform.position += new UnityEngine.Vector3(velocityX, velocityY, 0f) * VelocityMultiplier * Time.deltaTime;
-        
+
+        if (Original)
+        {
+            transform.position = new UnityEngine.Vector2(1000,1000);
+        }
     }
 
     float FindMovementRatio(char axis){
@@ -54,6 +63,7 @@ public class EnemyMovement : MonoBehaviour
 
         // Calculates what the length of the direct line between the player and enemy is.
         denominator = Mathf.Sqrt(xCoord*xCoord + yCoord*yCoord); 
+
         if(axis == 'x' && transform.position.x < playerObj.transform.position.x)
             return (xCoord / denominator);
         else if(axis == 'x' && transform.position.x > playerObj.transform.position.x)
