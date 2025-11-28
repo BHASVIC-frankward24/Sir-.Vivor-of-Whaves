@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Numerics;
-using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -17,7 +15,6 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnMonsters());
-        PlayerPrefs.SetString("Original", "False");
     }
 
     IEnumerator SpawnMonsters()

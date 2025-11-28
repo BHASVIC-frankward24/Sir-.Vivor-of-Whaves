@@ -7,6 +7,9 @@ public class EnemyDeath : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Melee"))
         {
+            int newKills = PlayerPrefs.GetInt("Kills") + 1;
+            PlayerPrefs.SetInt("Kills", newKills);
+            print("You have " + newKills + " kills!");
             gameObject.SetActive(false);
         }
     }

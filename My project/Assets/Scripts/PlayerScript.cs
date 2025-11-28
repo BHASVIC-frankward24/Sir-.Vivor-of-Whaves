@@ -117,6 +117,7 @@ public class Playerscript : MonoBehaviour
         PlayerPrefs.SetInt("SystemHealth", 3);
         SavePlayerData();
         PlayerPrefs.SetString("Reset", "False");
+        PlayerPrefs.SetInt("Kills", 0);
     }
 
 
